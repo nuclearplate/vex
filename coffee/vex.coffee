@@ -189,12 +189,4 @@ vexFactory = ($) ->
             vex.hideLoading()
             $('body').append("""<div class="vex-loading-spinner #{vex.defaultOptions.className}"></div>""")
 
-if typeof define is 'function' and define.amd
-    # AMD
-    define ['jquery'], vexFactory
-else if typeof exports is 'object'
-    # CommonJS
-    module.exports = vexFactory require('jquery')
-else
-    # Global
-    window.vex = vexFactory jQuery
+window.vex = vexFactory jQuery
